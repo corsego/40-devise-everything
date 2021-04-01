@@ -20,6 +20,8 @@
     <% if user_signed_in? %>
       <%= link_to "Home", root_path %>
       <br>
+      <%= link_to "Posts", posts_path %>
+      <br>
       <%= link_to current_user.email, edit_user_registration_path %>
       <br>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
