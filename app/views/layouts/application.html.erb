@@ -10,23 +10,28 @@
   </head>
 
   <body>
-    <center>
-      <h1>Superails app demo</h1>
-      <%= link_to "Source code on Github", "https://github.com/yshmarov", target: "_blank" %>
-    </center>
-    <hr>
-    <p class="notice" style="background-color: green;"><%= notice %></p>
-    <p class="alert" style="background-color: red;"><%= alert %></p>
-    <% if user_signed_in? %>
-      <%= link_to "Home", root_path %>
-      <br>
-      <%= link_to "Posts", posts_path %>
-      <br>
-      <%= link_to current_user.email, edit_user_registration_path %>
-      <br>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <div class="container">
+
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: name %>
+        <p>
+      <% end %>
+
+      <strong>SupeRails.com</strong>
+      <% if user_signed_in? %>
+        <%= link_to "Home", root_path %> |
+        <%= link_to "Posts", posts_path %> |
+        <%= link_to current_user.email, edit_user_registration_path %> |
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+      <% end %>
+      
       <hr>
-    <% end %>
-    <%= yield %>
+
+      <%= yield %>
+    </div>
+
   </body>
 </html>
+
