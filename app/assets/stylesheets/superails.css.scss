@@ -52,12 +52,13 @@ form .field, form .actions {
 
 table {
   border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
   margin: 20px 0;
   td, th {
     padding: 3px 8px;
     border: solid 1px #CCC;
   }
-  td.price { text-align: right; }
 }
 
 .notice {color: white; background-color: green;}
