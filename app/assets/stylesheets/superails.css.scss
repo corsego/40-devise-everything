@@ -4,14 +4,9 @@ html, body {
   font-size: 14px;
 }
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
 .container {
-  width: 80%;
+  word-wrap: break-word;
+  max-width: 80%;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
