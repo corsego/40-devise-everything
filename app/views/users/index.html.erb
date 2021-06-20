@@ -5,5 +5,8 @@
   <%= user.current_sign_in_ip %>
   <strong>confirmed?</strong>
   <%= user.confirmed? %>
+  <strong>access locked?</strong>
+  <%= user.access_locked? %>
+  <%= link_to ban_status(user), ban_user_path(user), method: :patch %>
   <br>
 <% end %>
