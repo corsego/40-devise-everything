@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: superails_development
+  database: superplate_development
 
 test:
   <<: *default
-  database: superails_test
+  database: superplate_test
 
 production:
   <<: *default
-  database: superails_production
-  username: superails
-  password: <%= ENV['superails_DATABASE_PASSWORD'] %>
+  database: superplate_production
+  username: superplate
+  password: <%= ENV['superplate_DATABASE_PASSWORD'] %>
