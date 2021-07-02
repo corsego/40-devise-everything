@@ -19,6 +19,7 @@
 
       <strong>SupeRails.com</strong>
       <% if user_signed_in? %>
+        <%= link_to "Invite User", new_user_invitation_path, class: "#{'font-weight-bold' if current_page?(new_user_invitation_path)}" %> |
         <%= link_to "Home", root_path, class: "#{'font-weight-bold' if current_page?(root_path)}" %> |
         <%= link_to "Posts", posts_path, class: "#{'font-weight-bold' if controller_name == "posts"}" %> |
         <%= link_to "Users", users_path, class: "#{'font-weight-bold' if controller_name == "users"}" %> |

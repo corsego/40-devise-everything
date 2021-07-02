@@ -7,6 +7,15 @@
   <%= user.confirmed? %>
   <strong>access locked?</strong>
   <%= user.access_locked? %>
+  <strong>created_by_invite?</strong>
+  <%= user.created_by_invite? %>
+  <strong>invitation_accepted?</strong>
+  <%= user.invitation_accepted? %>
+  <strong>invitees</strong>
+  <%= user.invitees.count %>
+  <% if user.created_by_invite? && user.invitation_accepted? == false %>
+    <%= link_to 'resend_invitation', resend_invitation_user_path(user), method: :patch %>
+  <% end %>
   <%= link_to ban_status(user), ban_user_path(user), method: :patch %>
   <br>
 <% end %>
